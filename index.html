@@ -19,13 +19,13 @@
       <span class="markLabel">X</span>
       <span class="markLabel">O</span>
       <br/>
-      <div class="times">Won <span class="one_times">0</span> <span class="two_times">0</span> times</div>
-      <div class="times">Lost <span class="one_times">0</span> <span class="two_times">0</span> times</div>
+      <div class="times">Won <span class="one_times" id="p1_wins">0</span> <span class="two_times" id="p2_wins">0</span> times</div>
+      <div class="times">Lost <span class="one_times" id="p1_lost">0</span> <span class="two_times" id="p2_lost">0</span> times</div>
       <br/>
       <div class="statusDiv borderBottom">Game Status</div>
-      <p id = "status-d" onclick = "cellClicked(event)" >New Game</p>
+      <p id = "status-d">New Game</p>
       <!-- Game Status Messages: Game in progress | Player 1 wins | Player 2 wins -->
-      <button onclick = "restert()">Restart</button>
+      <button id="clc">Restart</button>
     </div>
 
 

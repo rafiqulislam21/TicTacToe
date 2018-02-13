@@ -30,14 +30,27 @@ function cellClicked(event){
 		var result = finishGame();
 
 			if (result === 1) {
-				console.log("Player 1 wins!");
-				document.getElementById('status-d').innerHTML = "Player 1 won the game!";
+				//console.log("Player 1 wins!");
+				//document.getElementById('status-d').innerHTML = "Player 1 won the game!";
+				var temp = document.getElementById('p1_wins');
+			    temp.innerText = Number(temp.innerText) + 1;
+			    document.getElementById('status-d').innerHTML="Player 1 wins";
+
+			    var temp = document.getElementById('p2_lost');
+			    temp.innerText = Number(temp.innerText) + 1;
 				gameOver = true;
 			}
 			if (result === 0) {
-				console.log("Player 2 wins!");
-				document.getElementById('status-d').innerHTML = "Player 2 won the game!";
-				gameOver = true;
+				//console.log("Player 2 wins!");
+				//document.getElementById('status-d').innerHTML = "Player 2 won the game!";
+
+				 var temp = document.getElementById('p2_wins');
+				    temp.innerText = Number(temp.innerText) + 1;
+				    document.getElementById("gamestat").innerText="Player 2 wins";
+
+				    var temp = document.getElementById('p2_lost');
+				    temp.innerText = Number(temp.innerText) + 1;
+					gameOver = true;
 			}
 			if (result === -1) {
 				console.log("Tie");
@@ -48,6 +61,35 @@ function cellClicked(event){
 				document.getElementById('status-d').innerHTML = "Game is running";
 				console.log("Game must go on!");
 			}
+
+			function clear(){
+			  console.log("works")
+			  for (var i=0; i<9; i++){
+			    document.getElementById(i).innerText="";
+			  }
+			  document.getElementById("status-d").innerText="New Game";
+			  gameOver = false;
+ 
+			    turn = true;
+				gameOver = false;
+				clicked = [false, false, false,
+						   false, false, false,
+						   false, false, false];
+				endGame =    [[0,1,2],
+							 [3,4,5],
+							 [6,7,8],
+							 [0,4,8],
+							 [2,4,6],
+							 [1,4,7],
+							 [0,3,6],
+							 [2,5,8]];
+
+			}
+
+
+			document.getElementById("clc").addEventListener("click",function (event){
+			  clear();
+			});
 	}
 }
 
@@ -93,18 +135,4 @@ function finishGame() {
 	return false;
 }
 
-function restert(){
-
-	document.getElementById('status-d').innerHTML = "New Game !";
-	//element.innerHTML = "";
-
-	
-
-	//turn = true;
-	//gameOver = false;
-	//clicked = [false, false, false,
-	//		   false, false, false,
-	//		   false, false, false];
-
-}
 
