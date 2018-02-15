@@ -46,9 +46,9 @@ function cellClicked(event){
 
 				 var temp = document.getElementById('p2_wins');
 				    temp.innerText = Number(temp.innerText) + 1;
-				    document.getElementById("gamestat").innerText="Player 2 wins";
+				    document.getElementById("status-d").innerText="Player 2 wins";
 
-				    var temp = document.getElementById('p2_lost');
+				    var temp = document.getElementById('p1_lost');
 				    temp.innerText = Number(temp.innerText) + 1;
 					gameOver = true;
 			}
